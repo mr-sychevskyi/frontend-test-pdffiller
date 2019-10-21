@@ -1,0 +1,46 @@
+$paypal-section-bg: $gray-lighten;
+$paypal-section-border: $gray-light;
+
+.paypal-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 12px 16px;
+
+  background-color: $paypal-section-bg;
+  border: 1px solid $paypal-section-border;
+  border-radius: 3px;
+
+  @include media-breakpoint-down(md) {
+    border-radius: 6px;
+  }
+
+  &__info {
+    font-size: 14px;
+
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+    }
+  }
+
+  .paypal-button-container {
+    width: 100px;
+    max-width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      width: 135px;
+    }
+  }
+
+  .paypal-button-container > div {
+    min-width: 100px !important;
+  }
+}

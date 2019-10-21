@@ -1,0 +1,25 @@
+.up-tablet {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.only-desktop {
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+}
+
+.not-desktop {
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.pr-30 {
+  padding-right: 30px;
+}

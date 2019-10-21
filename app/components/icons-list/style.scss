@@ -1,0 +1,46 @@
+.icons-list {
+  text-align: center;
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+
+    @include media-breakpoint-up(md) {
+      margin-right: 6px;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+
+    .svg {
+      width: 40px;
+      height: 30px;
+      transition: transform .25s ease-out;
+
+      @include media-breakpoint-up(md) {
+        width: 36px;
+        height: 27px;
+      }
+    }
+
+    .svg.is-active {
+      transform: scale(1.25);
+    }
+  }
+
+  &.icons-list-mobile {
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  &.icons-list-desktop {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+}

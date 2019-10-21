@@ -1,0 +1,26 @@
+// Palette
+$color-primary: #444;
+$color-primary-dark: #343434;
+$color-primary-light: #888;
+
+$color-light: #FFF;
+$gray: #999;
+$gray-light: #DDD;
+$gray-border: #CCC;
+$gray-box-shadow: rgba(0, 0, 0, 0.2);
+$gray-lighten: #F7F7F7;
+
+$color-info-success: #468847;
+$color-info-error: #EF5350;
+$bg-info-error: #FFEBEE;
+
+$orange: #FD9000;
+$orange-dark: #FD7722;
+
+// Breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 768px,
+  lg: 1024px
+);

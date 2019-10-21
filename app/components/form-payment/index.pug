@@ -1,0 +1,113 @@
+include ../button/index
+include ../icons-list/index
+
+form.form-payment
+    h3.form-payment__title Thank you for choosing to subscribe to PDFfiller services!
+    div.form-payment__container
+        div.form-payment-body.form-payment__body
+            +icons-list('icons-list-mobile mb-20')
+            div.form-group
+                label.form-group__label(for='cardholder-first-name') Cardholder Name
+                div.form-group__wrapper
+                    input.form-group__input.form-group__element.form-group__element_w_50(
+                        id='cardholder-first-name'
+                        type=text
+                        name="first-name"
+                        placeholder='First Name'
+                        aria-labelledby='cardholder-first-name'
+                        data-parsley-trigger="focusout"
+                        data-parsley-required
+                        required)
+                    label.form-group__element_w_50(for='cardholder-last-name')
+                        input.form-group__input.form-group__element(
+                            id='cardholder-last-name'
+                            type=text
+                            name="last-name"
+                            placeholder='Last Name'
+                            aria-labelledby='cardholder-last-name'
+                            data-parsley-trigger="focusout"
+                            data-parsley-required
+                            required)
+            div.form-group
+                label.form-group__label(for='card-number') Card Number
+                div.form-group__wrapper
+                    input.form-group__input.form-group__element.form-group__element_w_50.card-input(
+                        id='card-number'
+                        type='tel'
+                        name='card-number'
+                        placeholder='⦁⦁⦁⦁ ⦁⦁⦁⦁ ⦁⦁⦁⦁ ⦁⦁⦁⦁'
+                        aria-labelledby='card-number'
+                        data-parsley-length="[16, 19]"
+                        data-parsley-trigger="focusout"
+                        data-parsley-required)
+                    +icons-list('icons-list-desktop form-group__element_w_50')
+            div.form-group-wrapper
+                div.form-group
+                    label.form-group__label(for='exp-date') Exp. Date
+                    div.form-group__wrapper
+                        select.form-group__select.form-group__element.form-group__element_w_month(
+                            id='exp-date'
+                            name="exp-date-month"
+                            aria-labelledby='exp-date'
+                            data-parsley-trigger="focusout"
+                            data-parsley-required)
+                            option(value='' selected disabled) MM
+                            each month in months
+                                option(value=month.id) #{month.title}
+                        span.slash-divider &sol;
+                        label.form-group__element_w_years(for='exp-date-year')
+                            select.form-group__select.form-group__element(
+                                id='exp-date-year'
+                                name="exp-date-year"
+                                aria-labelledby='exp-date-year'
+                                data-parsley-trigger="focusout"
+                                data-parsley-required)
+                                option(value='' selected disabled) YYYY
+                                each year in years
+                                    option(value=year.id) #{year.title}
+                div.form-group.form-group__cvv
+                    label.form-group__label.form-group__label_no_resize(for='cvv') CVV/CVC
+                    div.form-group__wrapper
+                        input.form-group__input.form-group__element.form-group__element_w_cvv.pr-30(
+                            id="cvv"
+                            type='tel'
+                            name="cvv"
+                            placeholder='XXXX'
+                            aria-labelledby='cvv'
+                            maxlength="4"
+                            data-parsley-maxlength="4"
+                            data-parsley-type='number'
+                            data-parsley-required)
+                        button.btn.btn-cvv(type="button" aria-label="show cvv tooltip" tabindex="-1")
+                            i.btn__icon
+                                svg.svg
+                                    use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href='#info-mark')
+                include ../cvv-tooltip/index
+            div.form-group
+                label.form-group__label(for='zip-code')
+                    span Zip
+                    span.up-tablet &nbsp;/ Postal
+                    span &nbsp;Code
+                div.form-group__wrapper
+                    input.form-group__input.form-group__element.form-group__element_w_50.zip-code(
+                        id='zip-code'
+                        type='tel'
+                        name='zip-code'
+                        placeholder='01001'
+                        aria-labelledby='zip-code'
+                        maxlength="10"
+                        data-parsley-maxlength="10"
+                        data-parsley-type="number"
+                        data-parsley-required)
+
+            +button(
+              'Start My Subscription for $19.99/mo.',
+              'submit',
+              'btn_primary btn_size_100 form-payment__submit only-desktop')
+
+        include ../paypal-section/index
+
+        +button(
+          'Start My Subscription for $19.99/mo.',
+          'submit',
+          'btn_primary btn_size_100 form-payment__submit not-desktop')

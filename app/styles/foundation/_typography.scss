@@ -1,0 +1,9 @@
+$font-color: $color-primary;
+
+body {
+  font-family: 'Arial', 'Courier New', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  color: $font-color;
+}

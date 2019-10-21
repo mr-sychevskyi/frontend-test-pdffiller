@@ -1,0 +1,9 @@
+- const icons = ['visa', 'mastercard', 'discover', 'amex']
+
+mixin icons-list(classes='')
+    ul(class=`icons-list ${classes}`)
+        each icon in icons
+            li.icons-list__item
+                i.icons-list__icon
+                    svg.svg(class=`icon-${icon}`)
+                        use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=`#${icon}`)

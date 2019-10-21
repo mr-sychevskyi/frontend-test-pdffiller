@@ -1,0 +1,24 @@
+/* --------------------------------------------------------
+   STYLES
+   -------------------------------------------------------- */
+
+// Mixins
+@import 'mixins/mixins';
+
+// Foundation
+@import 'foundation/foundation';
+
+// Utils
+@import 'utils/utils';
+
+// Components
+@import
+  '../components/button/style',
+  '../components/icons-list/style',
+  '../components/cvv-tooltip/style',
+  '../components/paypal-section/style',
+  '../components/form-payment/style';
+
+// Cosmetic
+@import
+  'cosmetic/cosmetic';

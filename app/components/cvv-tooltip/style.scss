@@ -1,0 +1,66 @@
+$cvv-tooltip-bg: $color-light;
+$cvv-tooltip-border: $gray-border;
+$cvv-tooltip-box-shadow: $gray-box-shadow;
+$cvv-tooltip-divider: $gray-light;
+
+.cvv-tooltip {
+  z-index: 100;
+
+  display: flex;
+  width: 285px;
+  max-width: 100%;
+  height: 170px;
+  padding: 20px;
+
+  font-size: 12px;
+  background: $cvv-tooltip-bg;
+  border: 1px solid $cvv-tooltip-border;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px $cvv-tooltip-box-shadow;
+
+  &__img {
+    display: block;
+    width: 108px;
+    height: 67px;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__divider {
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    margin: 0 12px;
+
+    background-color: $cvv-tooltip-divider;
+  }
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    right: 10px;
+
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  &:before {
+    top: 99%;
+    z-index: 10;
+    right: 10px;
+    border-width: 10px;
+    border-color: $cvv-tooltip-bg transparent transparent transparent;
+  }
+
+  &:after {
+    top: 100%;
+    border-width: 10px;
+    border-color: $cvv-tooltip-border transparent transparent transparent;
+  }
+}

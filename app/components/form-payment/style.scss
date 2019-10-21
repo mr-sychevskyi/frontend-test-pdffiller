@@ -1,0 +1,234 @@
+$form-payment-color: $color-primary-dark;
+$form-element-bg: $color-light;
+$form-element-border: $gray-border;
+$form-element-box-shadow: $gray-box-shadow;
+$form-placeholder-box-shadow: #888;
+
+$form-element-tablet-width: 162px;
+
+.form-payment {
+  margin: 0 auto;
+
+  @include media-breakpoint-down(md) {
+    padding: 30px 15px;
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: 635px;
+    padding: 40px 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 840px;
+  }
+
+  &__title {
+    margin-bottom: 22px;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    color: $form-payment-color;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    margin: 0 auto;
+
+    @include media-breakpoint-between(sm, lg) {
+      max-width: 470px;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+    }
+
+    @include media-breakpoint-between(md, lg) {
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    @include media-breakpoint-up(lg) {
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__body {
+    width: 100%;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 20px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      max-width: 470px;
+      margin-right: 20px;
+      text-align: right;
+    }
+  }
+
+  &__paypal-section {
+    @include media-breakpoint-up(md) {
+      width: 340px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 20px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 90px;
+      padding-top: 50px;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .paypal-section__info {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__submit {
+    @include media-breakpoint-up(md) {
+      width: 340px;
+    }
+  }
+}
+
+.form-group {
+  position: relative;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 15px;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 6px;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-right: 15px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    &:not(.form-group__label_no_resize) {
+      @include media-breakpoint-up(md) {
+        min-width: 115px;
+      }
+    }
+  }
+
+  &__input,
+  &__select {
+    width: 100%;
+    padding: 8px 10px;
+
+    font-size: 14px;
+    background-color: $form-element-bg;
+    border: 1px solid $form-element-border;
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 2px $form-element-box-shadow;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &::placeholder,
+    &-webkit-input-placeholder {
+      font-family: 'Arial', 'Courier New', sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      color: $form-placeholder-box-shadow;
+      letter-spacing: normal;
+    }
+
+    &[type=number]::-webkit-inner-spin-button,
+    &[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  &__select {
+    background: $form-element-bg url(../images/icons/arrow-down.svg) no-repeat right 6px center;
+  }
+
+  &__select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+
+  &__select::-ms-expand {
+    display: none;
+  }
+
+  &__cvv {
+    flex: 1 1 auto;
+    max-width: calc(50% - 5px);
+    margin-left: 15px;
+  }
+
+  &__cvv-tooltip {
+    position: absolute;
+    bottom: 76%;
+    right: -5px;
+
+    @include media-breakpoint-up(md) {
+      bottom: 105%;
+      right: -5px;
+    }
+  }
+}
+
+.form-group-wrapper,
+.form-group__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.form-group__element {
+  &_w_50 {
+    width: calc(50% - 5px);
+
+    @include media-breakpoint-up(md) {
+      width: calc(50% - 7.5px);
+    }
+  }
+
+  &.card-input,
+  &.zip-code {
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
+  }
+
+  &_w_month {
+    width: 65px;
+  }
+
+  &_w_years {
+    width: 78px;
+  }
+}

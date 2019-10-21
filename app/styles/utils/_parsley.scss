@@ -1,0 +1,86 @@
+$form-element-bg: $color-light;
+$info-success: $color-info-success;
+$info-error: $color-info-error;
+$info-error-bg: $bg-info-error;
+$info-error-box-shadow: $gray-box-shadow;
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: $info-success;
+  background-color: $form-element-bg;
+  border: 1px solid currentColor;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: $info-error;
+  background-color: $form-element-bg;
+  border: 1px solid currentColor;
+}
+
+.parsley-errors-list {
+  position: absolute;
+  bottom: 115%;
+  z-index: 100;
+
+  //width: 100%;
+  list-style-type: none;
+  font-size: 0.8em;
+  line-height: 0.9em;
+  opacity: 0;
+  color: $info-error;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list li {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+
+  color: $info-error;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 17px;
+
+  background-color: $info-error-bg;
+  border: 1px solid $info-error;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 1px $info-error-box-shadow;
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  &:before {
+    z-index: 10;
+    top: 98%;
+    border-width: 10px;
+    border-color: $info-error-bg transparent transparent transparent;
+  }
+
+  &:after {
+    top: 102%;
+    border-width: 10px;
+    border-color: $info-error transparent transparent transparent;
+  }
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
