@@ -4,8 +4,6 @@ $form-element-border: $gray-border;
 $form-element-box-shadow: $gray-box-shadow;
 $form-placeholder-box-shadow: #888;
 
-$form-element-tablet-width: 162px;
-
 .form-payment {
   margin: 0 auto;
 
@@ -165,6 +163,10 @@ $form-element-tablet-width: 162px;
     &[type=number]::-webkit-outer-spin-button {
       -webkit-appearance: none;
     }
+
+    &.show-error + .parsley-errors-list {
+      display: block;
+    }
   }
 
   &__select {
@@ -225,7 +227,7 @@ $form-element-tablet-width: 162px;
   }
 
   &_w_month {
-    width: 65px;
+    width: 64px;
   }
 
   &_w_years {

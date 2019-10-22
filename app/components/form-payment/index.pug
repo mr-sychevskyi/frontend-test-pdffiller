@@ -1,7 +1,7 @@
 include ../button/index
 include ../icons-list/index
 
-form.form-payment
+form.form-payment(method="POST" novalidate)
     h3.form-payment__title Thank you for choosing to subscribe to PDFfiller services!
     div.form-payment__container
         div.form-payment-body.form-payment__body
@@ -39,10 +39,11 @@ form.form-payment
                         aria-labelledby='card-number'
                         data-parsley-length="[16, 19]"
                         data-parsley-trigger="focusout"
-                        data-parsley-required)
+                        data-parsley-required
+                        required)
                     +icons-list('icons-list-desktop form-group__element_w_50')
             div.form-group-wrapper
-                div.form-group
+                div.form-group.form-group__exp-date
                     label.form-group__label(for='exp-date') Exp. Date
                     div.form-group__wrapper
                         select.form-group__select.form-group__element.form-group__element_w_month(
@@ -50,7 +51,8 @@ form.form-payment
                             name="exp-date-month"
                             aria-labelledby='exp-date'
                             data-parsley-trigger="focusout"
-                            data-parsley-required)
+                            data-parsley-required
+                            required)
                             option(value='' selected disabled) MM
                             each month in months
                                 option(value=month.id) #{month.title}
@@ -77,7 +79,8 @@ form.form-payment
                             maxlength="4"
                             data-parsley-maxlength="4"
                             data-parsley-type='number'
-                            data-parsley-required)
+                            data-parsley-required
+                            required)
                         button.btn.btn-cvv(type="button" aria-label="show cvv tooltip" tabindex="-1")
                             i.btn__icon
                                 svg.svg
@@ -98,7 +101,8 @@ form.form-payment
                         maxlength="10"
                         data-parsley-maxlength="10"
                         data-parsley-type="number"
-                        data-parsley-required)
+                        data-parsley-required
+                        required)
 
             +button(
               'Start My Subscription for $19.99/mo.',
