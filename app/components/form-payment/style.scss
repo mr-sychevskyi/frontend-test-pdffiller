@@ -21,11 +21,14 @@ $form-placeholder-box-shadow: #888;
   }
 
   &__title {
-    margin-bottom: 22px;
-    font-size: 20px;
     line-height: 26px;
     text-align: center;
     color: $form-payment-color;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 22px;
+      font-size: 20px;
+    }
 
     @include media-breakpoint-up(md) {
       margin-bottom: 30px;
@@ -34,11 +37,10 @@ $form-placeholder-box-shadow: #888;
   }
 
   &__container {
-    width: 100%;
-    margin: 0 auto;
-
-    @include media-breakpoint-between(sm, lg) {
+    @include media-breakpoint-down(lg) {
+      width: 100%;
       max-width: 470px;
+      margin: 0 auto;
     }
 
     @include media-breakpoint-up(md) {
@@ -51,43 +53,34 @@ $form-placeholder-box-shadow: #888;
     }
 
     @include media-breakpoint-up(lg) {
-      justify-content: center;
+      justify-content: space-between;
       flex-wrap: nowrap;
     }
   }
 
   &__body {
-    width: 100%;
-
     @include media-breakpoint-down(md) {
       margin-bottom: 20px;
     }
 
     @include media-breakpoint-up(lg) {
       max-width: 470px;
-      margin-right: 20px;
       text-align: right;
     }
   }
 
   &__paypal-section {
+    @include media-breakpoint-down(md) {
+      border-radius: 6px;
+    }
+
     @include media-breakpoint-up(md) {
       width: 340px;
+      border-radius: 3px;
     }
 
     @include media-breakpoint-down(lg) {
       margin-bottom: 20px;
-    }
-
-    @include media-breakpoint-up(lg) {
-      padding: 0 90px;
-      padding-top: 50px;
-      flex-direction: column;
-      justify-content: flex-start;
-
-      .paypal-section__info {
-        margin-bottom: 30px;
-      }
     }
   }
 
