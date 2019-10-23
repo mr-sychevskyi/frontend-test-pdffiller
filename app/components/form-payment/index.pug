@@ -15,7 +15,6 @@ form.form-payment(method="POST" novalidate)
                         name="first-name"
                         placeholder='First Name'
                         aria-labelledby='cardholder-first-name'
-                        data-parsley-trigger="focusout"
                         data-parsley-required
                         required)
                     label.form-group__element_w_50(for='cardholder-last-name')
@@ -25,7 +24,6 @@ form.form-payment(method="POST" novalidate)
                             name="last-name"
                             placeholder='Last Name'
                             aria-labelledby='cardholder-last-name'
-                            data-parsley-trigger="focusout"
                             data-parsley-required
                             required)
             div.form-group
@@ -38,7 +36,6 @@ form.form-payment(method="POST" novalidate)
                         placeholder='⦁⦁⦁⦁ ⦁⦁⦁⦁ ⦁⦁⦁⦁ ⦁⦁⦁⦁'
                         aria-labelledby='card-number'
                         data-parsley-length="[16, 19]"
-                        data-parsley-trigger="focusout"
                         data-parsley-required
                         required)
                     +icons-list('icons-list-desktop form-group__element_w_50')
@@ -50,7 +47,6 @@ form.form-payment(method="POST" novalidate)
                             id='exp-date'
                             name="exp-date-month"
                             aria-labelledby='exp-date'
-                            data-parsley-trigger="focusout"
                             data-parsley-required
                             required)
                             option(value='' selected disabled) MM
@@ -62,7 +58,6 @@ form.form-payment(method="POST" novalidate)
                                 id='exp-date-year'
                                 name="exp-date-year"
                                 aria-labelledby='exp-date-year'
-                                data-parsley-trigger="focusout"
                                 data-parsley-required)
                                 option(value='' selected disabled) YYYY
                                 each year in years
