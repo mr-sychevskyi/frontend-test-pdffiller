@@ -73,6 +73,7 @@ $(document).ready(function () {
       },
       complete: function (data) {
         formElements.val('');
+        hideErrors();
       }
     });
   }
